@@ -25,7 +25,7 @@ export function GhostCMSLoaderCollection({
 	apiVersion = 'v5.0',
 	__DO_NOT_USE_TESTING_ONLY__GHOST_CONTENT_API_KEY = '',
 }: LoaderCollectionOpts): LoaderCollection {
-	const env = loadEnv('all', process.cwd());
+	const env = loadEnv('all', process.cwd(), 'GHOST_');
 	const key = env.GHOST_CONTENT_API_KEY || __DO_NOT_USE_TESTING_ONLY__GHOST_CONTENT_API_KEY;
 
 	if (!key || key === '') {
